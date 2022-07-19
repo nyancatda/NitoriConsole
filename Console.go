@@ -1,7 +1,7 @@
 /*
  * @Author: NyanCatda
  * @Date: 2022-07-19 15:49:39
- * @LastEditTime: 2022-07-19 16:25:41
+ * @LastEditTime: 2022-07-19 17:37:27
  * @LastEditors: NyanCatda
  * @Description: 控制台模块
  * @FilePath: \NitoriConsole\Console.go
@@ -14,6 +14,7 @@ import (
 	"os"
 
 	"github.com/nyancatda/NitoriConsole/Command"
+	"github.com/nyancatda/NitoriConsole/Help"
 )
 
 /**
@@ -24,6 +25,9 @@ import (
  * @return {*}
  */
 func Start(Prompt string, Newline bool, Error func(error)) {
+	// 注册Help命令
+	Help.Register()
+
 	Reader := bufio.NewReader(os.Stdin)
 	// 循环处理输入
 	for {
