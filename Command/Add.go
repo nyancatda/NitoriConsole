@@ -1,7 +1,7 @@
 /*
  * @Author: NyanCatda
  * @Date: 2022-07-19 16:05:50
- * @LastEditTime: 2022-07-19 16:15:23
+ * @LastEditTime: 2022-07-19 16:55:44
  * @LastEditors: NyanCatda
  * @Description: 添加命令模块
  * @FilePath: \NitoriConsole\Command\Add.go
@@ -17,6 +17,7 @@ package Command
  */
 func Add(Command string, Help string, Callback func(string)) {
 	// 添加至命令列表
+	CommandList = make(map[string]CommandInfo)
 	CommandList[Command] = CommandInfo{Help, Callback}
 	return
 }
